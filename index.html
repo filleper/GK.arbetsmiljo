@@ -17,7 +17,7 @@
       <div class="row">
 
         <!-- A vertical navbar -->
-        <div class="col-3" id="sticky-sidebar">
+        <div class="col-3 d-print-none" id="sticky-sidebar">
           <div class="sticky-top">
 
               <!-- Links -->
@@ -108,7 +108,7 @@
         </div>
 
         <!-- Utskriftsrutan -->
-        <div class="col-6" id="main">
+        <div class="col-6 col-print-12" id="main">
           <!-- Header -->
 
           <!-- Ladda upp logotyp -->
@@ -630,8 +630,8 @@
               </thead>
               <tbody>
                 <tr class="d-flex">
-                  <td class="col-4"><input type="text" id="A" placeholder="EX: Pågen AB"></td>
-                  <td class="col-8 h-auto"><input type="text" id="A" placeholder="Exempel på var det finns fallrisker: Takarbete, fasadarbete, från stege, håligheter i till exempel bjälklag eller mark, montering av prefab, schaktkant, bergarbete."></td>
+                  <td class="col-4"><input type="textarea" id="A" placeholder="EX: Pågen AB"></td>
+                  <td class="col-8"><textarea class="form-control" id="B" rows="3" placeholder="Exempel på var det finns fallrisker: Takarbete, fasadarbete, från stege, håligheter i till exempel bjälklag eller mark, montering av prefab, schaktkant, bergarbete." style="font-size: 9pt;"></textarea></td>
                 </tr>
                 <tr class="d-flex">
                   <td class="col" id="Åtgärd"><strong>Åtgärder</strong> <em>Se även AFS 1981:14, AFS 1999:3, AFS 2001:3, AFS 2004:3, AFS 2013:4, H 456, ADI 511, ADI 512, ADI 539, ADI 583 samt Arbetsmiljöverkets informationssida på internet, samt Arbetsmiljöverkets informationssida om ställningar.</em></td>
@@ -836,18 +836,23 @@
               <div class="card-body border rounded">  
                 <h3>Schakt och öppningar</h3>
                   <p>Schakt samt öppningar i fasad och bjälklag, samt mark- / ledningsschakt och brunnar ska förses med hållfast och tydligt markerad/skyltad skyddsanordning mot fall och snubbling, t ex skyddsräcke, avspärrning eller täckning.</p>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck27">
-                  <label class="form-check-label" for="defaultCheck27">
-                    <p>Vald skyddsanordning är <input type="text" placeholder="ANGE SKYDDSANORDNING" style="width: 500px;"></p>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck28">
-                  <label class="form-check-label" for="defaultCheck28">
-                    <p>Minst 2 m skyddsavstånd om personlig fallskyddsutrustning inte används.</p>
-                  </label>
-                </div>
+                <form class="d-inline">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck27">
+                    <label class="form-check-label" for="defaultCheck27">
+                      <p>Vald skyddsanordning är</p>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" rows="1" placeholder="Ange skyddsanordning" style="font-size: 9pt;"></textarea>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck28">
+                    <label class="form-check-label" for="defaultCheck28">
+                      <p>Minst 2 m skyddsavstånd om personlig fallskyddsutrustning inte används.</p>
+                    </label>
+                  </div>
+                </form>
               </div>
             </div>
 
@@ -3010,8 +3015,8 @@
       </div>
     </div>
 
-<footer class="footer text-center">
-  <button class="btn btn-custom" style="margin: 10px;" onclick="printDiv('main')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+<footer class="footer text-center d-print-none">
+  <button class="btn btn-custom" style="margin: 10px;" onclick="window.print()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
     <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
     <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
   </svg> Skriv ut</button>
@@ -3034,20 +3039,6 @@
     } else {
        text.style.display = "none";
     }
-  }
-</script>
-
-<!-- För utskriftsknappen -->
-<script>
-  function printDiv(divName) {
-     var printContents = document.getElementById(divName).innerHTML;
-     var originalContents = document.body.innerHTML;
-
-     document.body.innerHTML = printContents;
-
-     window.print();
-
-     document.body.innerHTML = originalContents;
   }
 </script>
 
