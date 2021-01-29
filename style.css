@@ -3,17 +3,17 @@ body {
 }
 
 h1 {
-    color: #004c9d;
+    color: #004c9d !important;
 }
 
 h2 {
-    color: #004c9d;
+    color: #004c9d !important;
     font-size: 15pt;
     font-weight: bold;
 }
 
 h3 {
-    color: #004c9d;
+    color: #004c9d !important;
     font-size: 12pt;
 }
 
@@ -26,19 +26,19 @@ li {
 }
 
 table.table-bordered{
-    border: 1px solid #e4e2db;
+    border: 1px solid #e4e2db !important;
 }
 
 table.table-bordered > thead > tr > th{
-    border: 1px solid #e4e2db;
+    border: 1px solid #e4e2db !important;
 }
 
 table.table-bordered > tbody > tr > td{
-    border: 1px solid #e4e2db;
+    border: 1px solid #e4e2db !important;
 }
 
 thead {
-    background-color: #e4e2db;
+    background-color: #e4e2db !important;
 }
 
 th {
@@ -82,8 +82,8 @@ input[type="text"] {
 }
 
 #Åtgärd {
-    background-color: #007b4e;
-    color: #ffffff;
+    background-color: #007b4e !important; 
+    color: #ffffff !important;
 }
 
 #OBS {
@@ -137,6 +137,11 @@ input.btn-check[type=checkbox]:checked + label{
     .col-print-10{width:83%; float:left;}
     .col-print-11{width:92%; float:left;}
     .col-print-12{width:100%; float:left;}
+
+    body  {
+        -webkit-print-color-adjust: exact;
+     }
+
     }
 
 .GKlogo {
